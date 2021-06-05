@@ -1,6 +1,8 @@
-import { useReducer } from 'react';
+import { useReducer, createContext } from 'react';
 import './App.css';
 import ComponentA from 'components/ComponentA';
+
+export const CounterContext = createContext();
 const initialState = {
   counter: 0
 };
@@ -19,10 +21,13 @@ const reducer = (state, action) => {
 
 function App() {
 
-  const [status, dispatch] = useReducer(reducer, { ...initialState })
+  const [state, dispatch] = useReducer(reducer, { ...initialState });
+
   return (
     <div className="App">
-      <ComponentA />
+      <CounterContext.Provider value={{ counter: state, dispatch }} >
+        <ComponentA />
+      </CounterContext.Provider>
     </div>
   );
 }
