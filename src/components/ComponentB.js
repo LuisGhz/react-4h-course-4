@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { Button, ButtonGroup, Badge } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { CounterContext } from 'App';
+import ComponentC from './ComponentC';
 
 const ComponentB = () => {
   const { counter, dispatch } = useContext(CounterContext);
@@ -18,7 +19,10 @@ const ComponentB = () => {
         <Button color="dark" onClick={ () => dispatch({type: 'decrement'}) } > Decrement 1 </Button>
         <Button color="danger" onClick={ () => dispatch({type: 'reset'}) } > Reset </Button>
       </ButtonGroup>
+      <p></p>
+      <ComponentC />
     </div>
+
   );
 }
 
