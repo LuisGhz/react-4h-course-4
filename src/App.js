@@ -1,4 +1,5 @@
 import { useReducer, createContext } from 'react';
+import { Button, ButtonGroup, Badge } from 'reactstrap';
 import './App.css';
 import ComponentA from 'components/ComponentA';
 
@@ -25,6 +26,12 @@ function App() {
 
   return (
     <div className="App">
+      <ButtonGroup>
+        <Button color="primary" outline >
+          App Counter <Badge color="secondary">{ state.counter }</Badge>
+        </Button>
+      </ButtonGroup>
+      <p></p>
       <CounterContext.Provider value={{ counter: state, dispatch }} >
         <ComponentA />
       </CounterContext.Provider>
