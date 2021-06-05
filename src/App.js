@@ -1,6 +1,6 @@
 import { useReducer } from 'react';
 import './App.css';
-
+import ComponentA from 'components/ComponentA';
 const initialState = {
   counter: 0
 };
@@ -22,6 +22,7 @@ function App() {
   const [status, dispatch] = useReducer(reducer, { ...initialState })
   return (
     <div className="App">
+      <ComponentA />
     </div>
   );
 }
