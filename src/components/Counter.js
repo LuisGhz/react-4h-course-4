@@ -21,7 +21,7 @@ const reducer = (state, action) => {
 
 const Counter = () => {
 
-  const [count, dispatch] = useReducer(reducer, initialState);
+  const [count, dispatch] = useReducer(reducer, {...initialState});
 
   return (
     <div>
