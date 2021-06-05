@@ -2,13 +2,16 @@ import { useReducer } from 'react';
 import { Button, ButtonGroup } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const initialState = 0;
+const initialState = {
+  counter1: 0,
+  counter2: 0
+};
 const reducer = (state, action) => {
-  switch (action) {
+  switch (action.type) {
     case 'increment':
-      return ++state;
-    case 'decrement':
-      return --state;
+      return { ...state, counter1: ++state.counter1 };
+      case 'decrement':
+      return { ...state, counter1: --state.counter1 };
     case 'reset':
       return initialState;
     default:
@@ -22,11 +25,11 @@ const Counter = () => {
 
   return (
     <div>
-      <div>{ count }</div>
+      <div>{ count.counter1 }</div>
       <ButtonGroup>
-        <Button color="dark" onClick={ () => dispatch('increment') } > Increment </Button>
-        <Button color="dark" onClick={ () => dispatch('decrement') } > Decrement </Button>
-        <Button color="danger" onClick={ () => dispatch('reset') } > Reset </Button>
+        <Button color="dark" onClick={ () => dispatch({type: 'increment'}) } > Increment </Button>
+        <Button color="dark" onClick={ () => dispatch({type: 'decrement'}) } > Decrement </Button>
+        <Button color="danger" onClick={ () => dispatch({type: 'reset'}) } > Reset </Button>
       </ButtonGroup>
     </div>
   );
