@@ -1,5 +1,5 @@
 import { useReducer } from 'react';
-import { Button, ButtonGroup } from 'reactstrap';
+import { Button, ButtonGroup, Badge } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const initialState = {
@@ -25,7 +25,15 @@ const Counter = () => {
 
   return (
     <div>
-      <div>{ count.counter1 }</div>
+      <ButtonGroup>
+        <Button color="primary" outline >
+          Counter1 <Badge color="secondary">{ count.counter1 }</Badge>
+        </Button>
+        <Button color="primary" outline >
+          Counter2 <Badge color="secondary">{ count.counter2 }</Badge>
+        </Button>
+      </ButtonGroup>
+      <p></p>
       <ButtonGroup>
         <Button color="dark" onClick={ () => dispatch({type: 'increment'}) } > Increment </Button>
         <Button color="dark" onClick={ () => dispatch({type: 'decrement'}) } > Decrement </Button>
