@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const initialState = {
   counter1: 0,
-  counter2: 0
+  counter2: 10
 };
 const reducer = (state, action) => {
   switch (action.type) {
