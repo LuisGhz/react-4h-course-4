@@ -8,10 +8,14 @@ const initialState = {
 };
 const reducer = (state, action) => {
   switch (action.type) {
-    case 'increment':
+    case 'increment1':
       return { ...state, counter1: state.counter1 + 1 };
-      case 'decrement':
+      case 'decrement1':
       return { ...state, counter1: state.counter1 - 1 };
+    case 'increment2':
+      return { ...state, counter2: state.counter2 + 1 };
+      case 'decrement2':
+      return { ...state, counter2: state.counter2 - 1 };
     case 'reset':
       return {...initialState};
     default:
@@ -35,10 +39,16 @@ const Counter = () => {
       </ButtonGroup>
       <p></p>
       <ButtonGroup>
-        <Button color="dark" onClick={ () => dispatch({type: 'increment'}) } > Increment </Button>
-        <Button color="dark" onClick={ () => dispatch({type: 'decrement'}) } > Decrement </Button>
-        <Button color="danger" onClick={ () => dispatch({type: 'reset'}) } > Reset </Button>
+        <Button color="dark" onClick={ () => dispatch({type: 'increment1'}) } > Increment 1 </Button>
+        <Button color="dark" onClick={ () => dispatch({type: 'decrement1'}) } > Decrement 1 </Button>
       </ButtonGroup>
+      <p></p>
+      <ButtonGroup>
+        <Button color="dark" onClick={ () => dispatch({type: 'increment2'}) } > Increment 2 </Button>
+        <Button color="dark" onClick={ () => dispatch({type: 'decrement2'}) } > Decrement 2 </Button>
+      </ButtonGroup>
+      <p></p>
+      <Button color="danger" onClick={ () => dispatch({type: 'reset'}) } > Reset </Button>
     </div>
   );
 }
