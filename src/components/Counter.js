@@ -6,9 +6,9 @@ const initialState = 0;
 const reducer = (state, action) => {
   switch (action) {
     case 'increment':
-      return state + 1;
+      return ++state;
     case 'decrement':
-      return state - 1;
+      return --state;
     case 'reset':
       return initialState;
     default:
