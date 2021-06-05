@@ -37,14 +37,14 @@ const Counter = () => {
       <ButtonGroup>
         <Button color="dark" onClick={ () => dispatch1({type: 'increment'}) } > Increment 1 </Button>
         <Button color="dark" onClick={ () => dispatch1({type: 'decrement'}) } > Decrement 1 </Button>
+        <Button color="danger" onClick={ () => dispatch1({type: 'reset'}) } > Reset </Button>
       </ButtonGroup>
       <p></p>
       <ButtonGroup>
         <Button color="dark" onClick={ () => dispatch2({type: 'increment'}) } > Increment 2 </Button>
         <Button color="dark" onClick={ () => dispatch2({type: 'decrement'}) } > Decrement 2 </Button>
+        <Button color="danger" onClick={ () => dispatch2({type: 'reset'}) } > Reset </Button>
       </ButtonGroup>
-      <p></p>
-      <Button color="danger" onClick={ () => dispatch1({type: 'reset'}) } > Reset </Button>
     </div>
   );
 }
